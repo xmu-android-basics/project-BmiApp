@@ -1,6 +1,7 @@
 package io.github.xmu_android_basics.bmiapp;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -54,10 +55,10 @@ public class MainActivity extends AppCompatActivity {
 //            sendText(bmiResult);
 
             // TODO 实验1.2
-            sendTextWithSubject(bmiResult);
+//            sendTextWithSubject(bmiResult);
 
             // TODO 实验1.3
-//            sendTextAsMail(bmiResult);
+            sendTextAsMail(bmiResult);
         }
 
     }
@@ -119,5 +120,16 @@ public class MainActivity extends AppCompatActivity {
         // 可选附加 EXTRA_MAIL, Intent.EXTRA_CC, Intent.EXTRA_BCC
         // 在下面写上你的代码
 
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:"));
+        intent.putExtra(Intent.EXTRA_SUBJECT, "BMI result of " + whatDateisToday());
+        intent.putExtra(Intent.EXTRA_TEXT, text);
+
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            Toast.makeText(this, "start", Toast.LENGTH_SHORT).show();
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, "没有应用支持这个 Intent", Toast.LENGTH_SHORT).show();
+        }
     }
 }
