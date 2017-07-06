@@ -35,6 +35,41 @@ public class HistoryActivity extends AppCompatActivity {
         renderHistory();
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        // TODO 实验3
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        // TODO 实验3
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        // TODO 实验3
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        // TODO 实验3
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        // TODO 实验3
+    }
+
     private void renderHistory() {
         StringBuffer buffer = new StringBuffer();
 
