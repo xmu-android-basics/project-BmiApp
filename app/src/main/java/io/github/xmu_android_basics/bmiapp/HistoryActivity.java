@@ -20,10 +20,10 @@ public class HistoryActivity extends AppCompatActivity {
         historyView = (TextView) findViewById(R.id.bmiHistory);
 
         Intent intent = getIntent();
-        String bmiDate = intent.getStringExtra(BMI_DATE);
-        Double weight = intent.getDoubleExtra(BMI_WEIGHT, 0);
-        Double bmi = intent.getDoubleExtra(BMI_BMI, 0);
-
+        Bundle bundle = intent.getExtras();
+        String bmiDate = bundle.getString(BMI_DATE);
+        Double weight = bundle.getDouble(BMI_WEIGHT, 0);
+        Double bmi = bundle.getDouble(BMI_BMI, 0);
 
         historyView.setText(bmiDate + ": " + weight + "kg, BMI: " + bmi);
     }
