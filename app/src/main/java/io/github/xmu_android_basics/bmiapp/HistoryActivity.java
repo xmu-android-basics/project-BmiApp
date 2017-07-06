@@ -15,7 +15,7 @@ public class HistoryActivity extends AppCompatActivity {
 
     TextView historyView;
 
-    List<String> history = new ArrayList<>();
+    static List<String> history = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
