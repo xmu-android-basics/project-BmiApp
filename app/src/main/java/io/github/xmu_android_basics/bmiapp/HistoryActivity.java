@@ -3,6 +3,7 @@ package io.github.xmu_android_basics.bmiapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -13,6 +14,8 @@ public class HistoryActivity extends AppCompatActivity {
     public static final String BMI_WEIGHT = "BMI_WEIGHT";
     public static final String BMI_BMI = "BMI_BMI";
 
+    private static final String TAG = "Lifecycle";
+
     TextView historyView;
 
     static List<String> history = new ArrayList<>();
@@ -20,6 +23,9 @@ public class HistoryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Log.w(TAG, "on create");
+
         setContentView(R.layout.activity_history);
 
         historyView = (TextView) findViewById(R.id.bmiHistory);
@@ -39,35 +45,35 @@ public class HistoryActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        // TODO 实验3
+        Log.w(TAG, "on start");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
 
-        // TODO 实验3
+        Log.w(TAG, "on resume");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
 
-        // TODO 实验3
+        Log.w(TAG, "on pause");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
 
-        // TODO 实验3
+        Log.w(TAG, "on stop");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
 
-        // TODO 实验3
+        Log.w(TAG, "on destroy");
     }
 
     private void renderHistory() {
