@@ -140,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
         // TODO 实验2
 
         Intent historyIntent = new Intent(this, HistoryActivity.class);
+        historyIntent.putExtra(Intent.EXTRA_TEXT, bmiResult);
 
         startActivity(historyIntent);
     }
