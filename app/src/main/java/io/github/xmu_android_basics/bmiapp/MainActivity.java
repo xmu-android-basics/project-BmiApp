@@ -1,10 +1,12 @@
 package io.github.xmu_android_basics.bmiapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -49,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (! bmiResult.isEmpty()) {
             // TODO 实验1.1
-//            sendText(bmiResult);
+            sendText(bmiResult);
 
             // TODO 实验1.2
 //            sendTextWithSubject(bmiResult);
@@ -73,11 +75,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void sendText(String text) {
-        // TODO 实验1.1：使用隐式 Intent 发送文本
+        // 实验1.1：使用隐式 Intent 发送文本
         // 使用 ACTION_SEND
         // 附加 EXTRA_TEXT
         // 设置 Type 为 "text/plain"
         // 在下面写上你的代码
+
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.putExtra(Intent.EXTRA_TEXT, text);
+        intent.setType("text/plain");
+
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, "没有应用支持这个 Intent", Toast.LENGTH_SHORT).show();
+        }
 
     }
 
