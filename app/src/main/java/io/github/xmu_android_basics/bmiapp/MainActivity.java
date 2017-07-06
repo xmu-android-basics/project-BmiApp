@@ -51,10 +51,10 @@ public class MainActivity extends AppCompatActivity {
 
         if (! bmiResult.isEmpty()) {
             // TODO 实验1.1
-            sendText(bmiResult);
+//            sendText(bmiResult);
 
             // TODO 实验1.2
-//            sendTextWithSubject(bmiResult);
+            sendTextWithSubject(bmiResult);
 
             // TODO 实验1.3
 //            sendTextAsMail(bmiResult);
@@ -100,6 +100,16 @@ public class MainActivity extends AppCompatActivity {
         // 设置 Type 为 "text/plain"
         // 在下面写上你的代码
 
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.putExtra(Intent.EXTRA_SUBJECT, "BMI result of " + whatDateisToday());
+        intent.putExtra(Intent.EXTRA_TEXT, text);
+        intent.setType("text/plain");
+
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, "没有应用支持这个 Intent", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void sendTextAsMail(String text) {
