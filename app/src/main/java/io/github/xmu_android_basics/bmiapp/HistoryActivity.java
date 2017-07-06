@@ -31,5 +31,17 @@ public class HistoryActivity extends AppCompatActivity {
         Double bmi = bundle.getDouble(BMI_BMI, 0);
 
         history.add(bmiDate + ": " + weight + "kg, BMI: " + bmi);
+
+        renderHistory();
+    }
+
+    private void renderHistory() {
+        StringBuffer buffer = new StringBuffer();
+
+        for (String bmiRecord : history) {
+            buffer.insert(0, bmiRecord + "\n");
+        }
+
+        historyView.setText(buffer.toString());
     }
 }
