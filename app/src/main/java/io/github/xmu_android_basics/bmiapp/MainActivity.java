@@ -46,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
         bmiResult = generateResult(Double.valueOf(weightInput), bmi);
 
         resultWidget.setText(bmiResult);
+
+        // TODO 实验2 打开 HistoryActivity.class
+        startHistoryActivity();
     }
 
     public void onShareClick(View view) {
@@ -131,5 +134,9 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "没有应用支持这个 Intent", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void startHistoryActivity() {
+        // TODO 实验2
     }
 }
