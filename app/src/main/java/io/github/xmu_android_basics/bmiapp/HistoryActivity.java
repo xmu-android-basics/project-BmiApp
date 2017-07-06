@@ -5,12 +5,17 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class HistoryActivity extends AppCompatActivity {
     public static final String BMI_DATE = "BMI_DATE";
     public static final String BMI_WEIGHT = "BMI_WEIGHT";
     public static final String BMI_BMI = "BMI_BMI";
 
     TextView historyView;
+
+    List<String> history = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +30,6 @@ public class HistoryActivity extends AppCompatActivity {
         Double weight = bundle.getDouble(BMI_WEIGHT, 0);
         Double bmi = bundle.getDouble(BMI_BMI, 0);
 
-        historyView.setText(bmiDate + ": " + weight + "kg, BMI: " + bmi);
+        history.add(bmiDate + ": " + weight + "kg, BMI: " + bmi);
     }
 }
