@@ -138,5 +138,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void startHistoryActivity() {
         // TODO 实验2
+
+        Intent historyIntent = new Intent(this, HistoryActivity.class);
+
+        startActivity(historyIntent);
     }
 }
