@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         resultWidget.setText(bmiResult);
 
         // TODO 实验2 打开 HistoryActivity.class
-        startHistoryActivity();
+        startHistoryActivity(Double.valueOf(weightInput), bmi);
     }
 
     public void onShareClick(View view) {
@@ -136,11 +136,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void startHistoryActivity() {
+    private void startHistoryActivity(Double weight, Double bmi) {
         // TODO 实验2
 
         Intent historyIntent = new Intent(this, HistoryActivity.class);
-        historyIntent.putExtra(Intent.EXTRA_TEXT, bmiResult);
+        historyIntent.putExtra("BMI_DATE", whatDateisToday());
+        historyIntent.putExtra("BMI_WEIGHT", weight);
+        historyIntent.putExtra("BMI_BMI", bmi);
 
         startActivity(historyIntent);
     }
