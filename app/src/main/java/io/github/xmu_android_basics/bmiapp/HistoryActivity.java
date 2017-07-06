@@ -6,6 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 public class HistoryActivity extends AppCompatActivity {
+    public static final String BMI_DATE = "BMI_DATE";
+    public static final String BMI_WEIGHT = "BMI_WEIGHT";
+    public static final String BMI_BMI = "BMI_BMI";
+
     TextView historyView;
 
     @Override
@@ -16,9 +20,9 @@ public class HistoryActivity extends AppCompatActivity {
         historyView = (TextView) findViewById(R.id.bmiHistory);
 
         Intent intent = getIntent();
-        String bmiDate = intent.getStringExtra("BMI_DATE");
-        Double weight = intent.getDoubleExtra("BMI_WEIGHT", 0);
-        Double bmi = intent.getDoubleExtra("BMI_BMI", 0);
+        String bmiDate = intent.getStringExtra(BMI_DATE);
+        Double weight = intent.getDoubleExtra(BMI_WEIGHT, 0);
+        Double bmi = intent.getDoubleExtra(BMI_BMI, 0);
 
 
         historyView.setText(bmiDate + ": " + weight + "kg, BMI: " + bmi);

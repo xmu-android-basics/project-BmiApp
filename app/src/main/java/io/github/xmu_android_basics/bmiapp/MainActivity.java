@@ -140,9 +140,9 @@ public class MainActivity extends AppCompatActivity {
         // TODO 实验2
 
         Intent historyIntent = new Intent(this, HistoryActivity.class);
-        historyIntent.putExtra("BMI_DATE", whatDateisToday());
-        historyIntent.putExtra("BMI_WEIGHT", weight);
-        historyIntent.putExtra("BMI_BMI", bmi);
+        historyIntent.putExtra(HistoryActivity.BMI_DATE, whatDateisToday());
+        historyIntent.putExtra(HistoryActivity.BMI_WEIGHT, weight);
+        historyIntent.putExtra(HistoryActivity.BMI_BMI, bmi);
 
         startActivity(historyIntent);
     }
