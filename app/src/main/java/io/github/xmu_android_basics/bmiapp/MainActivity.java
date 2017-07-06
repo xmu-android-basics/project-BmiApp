@@ -48,7 +48,14 @@ public class MainActivity extends AppCompatActivity {
     public void onShareClick(View view) {
 
         if (! bmiResult.isEmpty()) {
-            // TODO
+            // TODO 实验1.1
+//            sendText(bmiResult);
+
+            // TODO 实验1.2
+//            sendTextWithSubject(bmiResult);
+
+            // TODO 实验1.3
+//            sendTextAsMail(bmiResult);
         }
 
     }
@@ -63,5 +70,32 @@ public class MainActivity extends AppCompatActivity {
 
     private String generateResult(Double weight, Double bmi) {
         return whatDateisToday() + "，体重是：" + weight + "，BMI 指数是：" + bmi;
+    }
+
+    private void sendText(String text) {
+        // TODO 实验1.1：使用隐式 Intent 发送文本
+        // 使用 ACTION_SEND
+        // 附加 EXTRA_TEXT
+        // 设置 Type 为 "text/plain"
+        // 在下面写上你的代码
+
+    }
+
+    private void sendTextWithSubject(String text) {
+        // TODO 实验1.2：使用隐式 Intent 发送文本
+        // 使用 ACTION_SEND
+        // 附加 EXTRA_SUBJECT 和 EXTRA_TEXT
+        // 设置 Type 为 "text/plain"
+        // 在下面写上你的代码
+
+    }
+
+    private void sendTextAsMail(String text) {
+        // TODO 实验1.3：使用隐式 Intent 发送文本
+        // 使用 ACTION_SEND
+        // 附加 EXTRA_SUBJECT 和 EXTRA_TEXT
+        // 可选附加 EXTRA_MAIL, Intent.EXTRA_CC, Intent.EXTRA_BCC
+        // 在下面写上你的代码
+
     }
 }
