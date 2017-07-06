@@ -43,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
         bmiResult = generateResult(Double.valueOf(weightInput), bmi);
 
         resultWidget.setText(bmiResult);
+
+        // TODO 实验2 打开 HistoryActivity.class
+        startHistoryActivity();
     }
 
     public void onShareClick(View view) {
@@ -97,5 +100,9 @@ public class MainActivity extends AppCompatActivity {
         // 可选附加 EXTRA_MAIL, Intent.EXTRA_CC, Intent.EXTRA_BCC
         // 在下面写上你的代码
 
+    }
+
+    private void startHistoryActivity() {
+        // TODO 实验2
     }
 }
